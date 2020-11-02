@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/addCityFragment">
+
+    <fragment
+        android:id="@+id/addCityFragment"
+        android:name="com.anton.veretinsky.weatherapp.ui.addcity.AddCityFragment"
+        android:label="AddCityFragment" >
+        <action
+            android:id="@+id/action_addCityFragment_to_citySearchFragment"
+            app:destination="@id/citySearchFragment" />
+        <action
+            android:id="@+id/action_addCityFragment_to_weatherForecastFragment"
+            app:destination="@id/weatherForecastFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/citySearchFragment"
+        android:name="com.anton.veretinsky.weatherapp.ui.citysearch.CitySearchFragment"
+        android:label="CitySearchFragment" >
+        <argument
+            android:name="query"
+            app:argType="string"
+            android:defaultValue='""' />
+        <action
+            android:id="@+id/action_citySearchFragment_to_weatherForecastFragment"
+            app:destination="@id/weatherForecastFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherForecastFragment"
+        android:name="com.anton.veretinsky.weatherapp.ui.weatherforecast.WeatherForecastFragment"
+        android:label="WeatherForecastFragment" >
+        <argument
+            android:name="currentWeather"
+            app:argType="com.anton.veretinsky.weatherapp.data.source.local.entity.CurrentWeatherEntity"
+            app:nullable="true" />
+    </fragment>
+</navigation>

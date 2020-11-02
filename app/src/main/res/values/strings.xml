@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Погода</string>
+    <string name="permission_requirement_explanation">Невозможно получить информацию о Вашем местоположении</string>
+    <string name="settings">Настройки</string>
+    <string name="no_data">--</string>
+    <string name="slash">/</string>
+    <string name="locating">Определение местоположения…</string>
+    <string name="current_city">Текущий город</string>
+    <string name="favourite_cities">Избранные города</string>
+    <string name="temp_in_cels">%.0f℃</string>
+    <string name="city_search">Поиск города</string>
+    <string name="city_search_hint">Введите название города</string>
+    <string name="search_result">Результат поиска</string>
+    <string name="forecast">Прогноз</string>
+</resources>

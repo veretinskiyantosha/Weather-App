@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/my_city_current_weather_background"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/my_location_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/my_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/white"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/city_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/pt_sans"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/my_location_image_view"
+        app:layout_constraintStart_toEndOf="@id/my_location_image_view"
+        app:layout_constraintTop_toTopOf="@id/my_location_image_view"
+        tools:text="@string/locating" />
+
+    <TextView
+        android:id="@+id/temp_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/pt_sans"
+        android:textColor="#D3D3D3"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/city_text_view"
+        tools:text="@string/no_data" />
+
+    <TextView
+        android:id="@+id/slash_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/pt_sans"
+        android:text="@string/slash"
+        android:textColor="#D3D3D3"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/temp_text_view"
+        app:layout_constraintStart_toEndOf="@id/temp_text_view" />
+
+    <TextView
+        android:id="@+id/weather_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/pt_sans"
+        android:textColor="#D3D3D3"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/slash_text_view"
+        app:layout_constraintStart_toEndOf="@+id/slash_text_view"
+        tools:text="@string/no_data" />
+
+    <TextView
+        android:id="@+id/last_update_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/pt_sans"
+        android:textColor="#D3D3D3"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="5 минут назад" />
+</androidx.constraintlayout.widget.ConstraintLayout>
