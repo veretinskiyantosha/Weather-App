@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.NestedScrollView;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -45,6 +46,8 @@ public class WeatherForecastFragment extends DaggerFragment {
     Toolbar toolbar;
     @BindView(R.id.toolbarTitle)
     TextView toolbarTitle;
+    @BindView(R.id.nested_scroll_view)
+    NestedScrollView nestedScrollView;
     @BindView(R.id.temp_text_view)
     TextView tempTextView;
     @BindView(R.id.weather_text_view)
@@ -129,7 +132,8 @@ public class WeatherForecastFragment extends DaggerFragment {
     }
 
     private void setupAppbar() {
-        appbar.setSelected(false);
+        nestedScrollView.setOnScrollChangeListener((NestedScrollView.OnScrollChangeListener) (v, scrollX, scrollY, oldScrollX, oldScrollY) ->
+                appbar.setSelected(v.canScrollVertically(-1)));
     }
 
     private void initAdapter() {
